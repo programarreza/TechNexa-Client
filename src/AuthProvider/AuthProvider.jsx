@@ -6,22 +6,25 @@ import { toast } from "react-hot-toast";
 
 export const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
-
+	const [loading, setLoading] =useState(true)
 	const [user, setUser] = useState(null)
 
 	console.log(12, user);
 
 	const createUser = (email, password) => {
+		setLoading(true)
 		return createUserWithEmailAndPassword(auth, email, password)
 	}
 
 	const login = (email, password) => {
+		setLoading(true)
 		return signInWithEmailAndPassword(auth, email, password)
 	}
 
 	// login with google
 	const googleProvider = new GoogleAuthProvider()
 	const googleLogin = () => {
+		setLoading(true)
 		signInWithPopup(auth, googleProvider)
 			.then(result => {
 				console.log(result.user);
@@ -34,29 +37,33 @@ const AuthProvider = ({ children }) => {
 		return
 	}
 
+	
+	
+	const logout = () => {
+		setLoading(true)
+		return signOut(auth)
+	}
+
+	// profile update
+	const profileUpdate = (name, photo) => {
+		setLoading(true)
+		return updateProfile(name, photo)
+	}
+	
 	// observer
 	useEffect(() => {
 		const unSubscribe = onAuthStateChanged(auth, (user) => {
 			setUser(user)
+			setLoading(false)
 		})
 		return () => {
 			unSubscribe()
 		}
 	}, [])
 
-
-	const logout = () => {
-		return signOut(auth)
-	}
-
-	// profile update
-	const profileUpdate = (name, photo) => {
-		return updateProfile(name, photo)
-	}
-
-
 	const authInfo = {
 		user,
+		loading,
 		createUser,
 		login,
 		googleLogin,
