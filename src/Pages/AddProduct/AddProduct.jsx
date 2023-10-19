@@ -17,7 +17,7 @@ const AddProduct = () => {
 		console.log(image, name, brand_name, type, price, description, rating);
 		const product = { image, name, brand_name, type, price, rating, description }
 
-		fetch('http://localhost:5000/product', {
+		fetch('http://localhost:5000/products', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
