@@ -86,6 +86,7 @@ const AddProduct = () => {
 							<option>Computer</option>
 							<option>Headphone</option>
 							<option>Speaker</option>
+							<option>Watch</option>
 						</select>
 					</div>
 
@@ -102,9 +103,14 @@ const AddProduct = () => {
 						<label className="label">
 							<span className="label-text">Rating</span>
 						</label>
-						<label className="">
-							<input type="text" name="rating" placeholder="Rating" className="input input-bordered focus-visible:border-hidden rounded-md w-full" />
-						</label>
+						<select name="rating" className="select select-bordered">
+							<option disabled selected>Select Rating</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
 					</div>
 
 				</div>
