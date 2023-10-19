@@ -55,8 +55,9 @@ const Navbar = () => {
 						{links}
 					</ul>
 				</div>
-				<div>
-					<h3>TechNexa</h3>
+				<div className="flex items-center">
+					<img src="https://i.postimg.cc/HxMmLHZr/logo.png" className="w-12 mr-2" alt="" />
+					<h3 className="text-xl font-semibold">TechNexa</h3>
 				</div>
 			</div>
 			<div className="navbar-center hidden lg:flex">

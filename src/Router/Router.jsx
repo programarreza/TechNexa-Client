@@ -6,11 +6,13 @@ import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../Pages/Error/Error";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <MainLayout></MainLayout>,
+		errorElement: <Error></Error>,
 		children: [
 			{
 				path: "/",
