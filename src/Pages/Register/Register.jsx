@@ -16,6 +16,15 @@ const Register = () => {
 		const password = form.get('password')
 		console.log(name,photo, email, password);
 
+		if (password.length < 6) {
+			toast.error("Password should be at least 6 character");
+			return;
+		}
+		else if (!/^.*(?=.{8,})(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/.test(password)) {
+			toast.error("Password should be at least one capital letter and one special character");
+			return;
+		}
+
 		createUser(email, password)
 		.then(result => {
 			console.log(result.user);
