@@ -18,6 +18,7 @@ const Category = () => {
 	return (
 		<div className="grid grid-cols-3 gap-6 px-24 py-12">
 			{/* <h2>Category List : {categories.length}</h2> */}
+			
 			{
 				categories.map(category => <CategoryCard key={category._id} category={category}></CategoryCard>)
 			}

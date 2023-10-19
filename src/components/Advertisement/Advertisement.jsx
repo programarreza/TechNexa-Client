@@ -7,7 +7,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-const Banner = () => {
+
+const Advertisement = () => {
 	return (
 		<div>
 			<>
@@ -34,4 +35,4 @@ const Banner = () => {
 	);
 };
 
-export default Banner;
+export default Advertisement;
