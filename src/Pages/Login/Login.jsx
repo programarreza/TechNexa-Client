@@ -7,7 +7,7 @@ import { toast } from "react-hot-toast";
 
 const Login = () => {
 
-	const { login } = useContext(AuthContext)
+	const { login, googleLogin } = useContext(AuthContext)
 
 	const handleLogin = (e) => {
 		e.preventDefault();
@@ -23,6 +23,7 @@ const Login = () => {
 		})
 		.catch(error => {
 			console.log(error);
+			toast.error(error.message)
 		})
 	}
 	return (
@@ -58,7 +59,7 @@ const Login = () => {
 							<Link to={"/register"} className="btn-link">Create Account</Link>
 						</div>
 
-						<div onClick={"googleLogin"} className="border cursor-pointer flex items-center gap-4 justify-center p-3 rounded-md text-lg font-medium mt-3">
+						<div onClick={googleLogin} className="border cursor-pointer flex items-center gap-4 justify-center p-3 rounded-md text-lg font-medium mt-3">
 							<FcGoogle />
 							<button >Login With Google</button>
 						</div>
