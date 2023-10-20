@@ -6,7 +6,7 @@ const News = () => {
 	
 
 	useEffect(() => {
-		fetch('http://localhost:5000/news')
+		fetch('https://tech-nexa-server-391m8l6ks-md-shafikul-islams-projects.vercel.app/news')
 			.then(res => res.json())
 			.then(data => {
 				setNews(data);

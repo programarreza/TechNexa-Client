@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 
 const Category = () => {
 	const [categories, setCategories] = useState([])
 
 	useEffect(() => {
-		fetch('http://localhost:5000/category')
+		fetch('https://tech-nexa-server-391m8l6ks-md-shafikul-islams-projects.vercel.app/category')
 			.then(res => res.json())
 			.then(data => {
 				setCategories(data)

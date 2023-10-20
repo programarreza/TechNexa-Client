@@ -6,11 +6,11 @@ import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyCart from "../Pages/MyCart/MyCart";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import Register from "../Pages/Register/Register";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
-import PrivateRoute from "./PrivateRoute";
-import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import News from "../components/News/News";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
 	{
@@ -49,21 +49,21 @@ const router = createBrowserRouter([
 			{
 				path: "/products/:brand",
 				element: <Brand></Brand>,
-				loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brand}`)
+				loader: ({ params }) => fetch(`https://tech-nexa-server-391m8l6ks-md-shafikul-islams-projects.vercel.app/products/${params.brand}`)
 			},
 			{
 				path: "/product-details/:id",
 				element: <PrivateRoute>
 					<ProductDetails></ProductDetails>
 				</PrivateRoute>,
-				loader: ({ params }) => fetch(`http://localhost:5000/product-details/${params.id}`)
+				loader: ({ params }) => fetch(`https://tech-nexa-server-391m8l6ks-md-shafikul-islams-projects.vercel.app/product-details/${params.id}`)
 			},
 			{
 				path: "/updateProduct/:id",
 				element: <PrivateRoute>
 					<UpdateProduct></UpdateProduct>
 				</PrivateRoute>,
-				loader: ({params}) => fetch(`http://localhost:5000/product-update/${params.id}`)
+				loader: ({params}) => fetch(`https://tech-nexa-server-391m8l6ks-md-shafikul-islams-projects.vercel.app/product-update/${params.id}`)
 			}
 		]
 	}

@@ -17,7 +17,7 @@ const AddProduct = () => {
 		console.log(image, name, brand_name, type, price, description, rating);
 		const product = { image, name, brand_name, type, price, rating, description }
 
-		fetch('http://localhost:5000/products', {
+		fetch('https://tech-nexa-server-391m8l6ks-md-shafikul-islams-projects.vercel.app/products', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
