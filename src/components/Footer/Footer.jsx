@@ -7,10 +7,10 @@ const Footer = () => {
 		<div>
 			<footer className="footer p-10 bg-base-200 text-white bg-[url('https://i.postimg.cc/cHz5ryh6/footer-bg-1.jpg')] bg-cover bg-center backdrop-brightness-50">
 				<nav>
-					<header className="footer-title text-lg">Services</header>
+					<header className="footer-title lg:text-lg">Services</header>
 					<div className="flex items-center ">
 						<img src="https://i.postimg.cc/HxMmLHZr/logo.png" className="w-14" alt="" />
-						<h2 className="text-5xl ml-2">TechNexa</h2>
+						<h2 className="text-2xl lg:text-5xl ml-2">TechNexa</h2>
 					</div>
 					<div className='space-y-3 text-lg'>
 						<p>technology services play a supporting <br /> and advancing modern businesses</p>

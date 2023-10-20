@@ -9,9 +9,9 @@ const BrandCard = ({ product }) => {
 	
 	return (
 		<div>
-			<div className="hero w-full h-full bg-base-200">
+			<div className="hero md:w-full h-full bg-base-200">
 				<div className="hero-content flex-col lg:flex-row">
-					<img src={image} className="w-[200px] h-[150px]  rounded-lg shadow-2xl" />
+					<img src={image} className="w-[100%] lg:w-[200px] md:h-[250px] lg:h-[150px]  rounded-lg shadow-2xl" />
 					<div className="flex">
 						<div>
 							<h1 className="text-xl font-bold"> {name}</h1>

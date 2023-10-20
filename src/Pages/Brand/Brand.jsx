@@ -8,9 +8,9 @@ const Brand = () => {
 	return (
 		<div>
 			<div>
-				{/* <Advertisement></Advertisement> */}
+				<Advertisement></Advertisement>
 			</div>
-			<div className="grid grid-cols-2 gap-8 px-24 py-12">
+			<div className="grid md:grid-cols-2 gap-8 px-2 xl:px-24 py-12">
 				{
 					products.map(product => <BrandCard key={product._id} product={product}></BrandCard>)
 				}

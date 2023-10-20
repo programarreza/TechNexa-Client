@@ -13,11 +13,8 @@ const Category = () => {
 			})
 	}, [])
 
-	// console.log(categories);
 	return (
-		<div className="grid grid-cols-3 gap-6 px-24 py-12">
-			{/* <h2>Category List : {categories.length}</h2> */}
-			
+		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-8 xl:px-24 py-12 mx-auto bg-gradient-to-br from-slate-100 via-slate-100 to-gray-300">
 			{
 				categories.map(category => <CategoryCard key={category._id} category={category}></CategoryCard>)
 			}

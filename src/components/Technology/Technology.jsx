@@ -12,7 +12,7 @@ const Technology = () => {
 				<div className="w-full h-full flex  justify-center items-center bg-[#0d0b18]/80 backdrop-brightness-50">
 					<div>
 						<h2 className="text-white text-4xl text-center">Help You Overcome Your <br /> Technology Challeges</h2>
-						<div className='grid grid-cols-4 gap-28 mt-12'>
+						<div className='grid grid-cols-2 gap-4  lg:grid-cols-4 lg:gap-12 xl:gap-28 mt-12'>
 							<div className='text-2xl border-sky-400 rounded-md cursor-pointer text-white text-center w-44 border py-5'>
 								<AiFillApple className='text-8xl mx-auto bg-[#191728] rounded-full p-3' />
 								<p className='mt-4'>ISO</p>

@@ -14,8 +14,8 @@ const News = () => {
 	}, [])
 	return (
 		<div className="my-12">
-			<h2 className="text-center text-5xl font-bold mb-10">Read Our Latest News</h2>
-			<div className="grid grid-cols-3 gap-6 px-24">
+			<h2 className="text-center text-5xl font-bold mb-16">Read Our Latest News</h2>
+			<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-8 xl:px-24">
 			{
 				newses.map(news => <NewsCard key={news._id} news={news}></NewsCard>)
 			}

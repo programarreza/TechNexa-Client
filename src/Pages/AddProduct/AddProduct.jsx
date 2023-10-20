@@ -40,10 +40,10 @@ const AddProduct = () => {
 	}
 
 	return (
-		<div className="px-24">
-			<h2 className="text-center my-6 text-3xl font-medium">add product</h2>
+		<div className="px-2 md:px-24 pb-12">
+			<h2 className="text-center my-6 text-3xl font-bold">add product</h2>
 			<form onSubmit={handleAddProduct}>
-				<div className="grid grid-cols-2 gap-6">
+				<div className="grid lg:grid-cols-2 gap-6">
 					<div className="form-control">
 						<label className="label">
 							<span className="label-text">Image</span>

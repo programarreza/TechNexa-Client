@@ -6,7 +6,7 @@ const Navbar = () => {
 
 	const { logout, user } = useContext(AuthContext)
 
-	const links = <div className="flex items-center gap-5">
+	const links = <div className="flex items-center gap-5 text-lg font-bold">
 		<NavLink
 			to="/"
 			className={({ isActive, isPending }) =>
@@ -57,7 +57,7 @@ const Navbar = () => {
 				</div>
 				<div className="flex items-center">
 					<img src="https://i.postimg.cc/HxMmLHZr/logo.png" className="w-12 mr-2" alt="" />
-					<h3 className="text-xl font-semibold">TechNexa</h3>
+					<h3 className="hidden md:block  text-xl font-semibold">TechNexa</h3>
 				</div>
 			</div>
 			<div className="navbar-center hidden lg:flex">
@@ -67,7 +67,7 @@ const Navbar = () => {
 			</div>
 			<div className="navbar-end">
 				{
-					user && <p className="font-medium mr-2">{user?.displayName}</p>
+					user && <p className="font-medium mr-2 ">{user?.displayName}</p>
 				}
 				<div className="avatar">
 					<div className="w-12 rounded-full mr-3">

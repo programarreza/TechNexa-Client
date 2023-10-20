@@ -6,8 +6,8 @@ const ProductDetails = () => {
 	const {_id, image, name, price, description } = detailsProduct;
 	console.log(detailsProduct);
 	return (
-		<div className="px-24 mx-auto flex justify-center">
-			<div className="card w-[60%] h-[100vh] glass">
+		<div className="px-12 lg:px-24 mx-auto flex justify-center">
+			<div className="card lg:w-[60%] lg:h-[100vh] glass">
 				<figure><img className="w-full h-full" src={image} alt="car!" /></figure>
 				<div className=" flex justify-between p-4">
 					<div>
