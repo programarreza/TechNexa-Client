@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const BrandCard = ({ product }) => {
 	const {_id, image, name, brand_name, type, price, rating } = product;
+	console.log(_id);
 	
 	return (
 		<div>
@@ -22,12 +23,12 @@ const BrandCard = ({ product }) => {
 						</div>
 
 						<div className="btn-group btn-group-vertical space-y-4 mt-auto">
-							<Link to={`/products/${_id}`}>
+							{/* <Link to={`/products/${_id}`}> */}
 							<button className="btn bg-gray-500 text-white mb-12">Details </button>
-							</Link>
-							{/* <Link to={`update-coffee/${_id}`}> */}
-								<button className="btn bg-gray-500 text-white">Update </button>
 							{/* </Link> */}
+							<Link to={`/updateProduct/${_id}`}>
+								<button className="btn bg-gray-500 text-white">Update </button>
+							</Link>
 							
 						</div>
 					</div>
