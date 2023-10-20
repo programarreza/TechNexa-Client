@@ -3,6 +3,7 @@ import NewsCard from "./NewsCard";
 
 const News = () => {
 	const [newses, setNews] = useState([])
+	
 
 	useEffect(() => {
 		fetch('http://localhost:5000/news')

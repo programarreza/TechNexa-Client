@@ -23,9 +23,9 @@ const BrandCard = ({ product }) => {
 						</div>
 
 						<div className="btn-group btn-group-vertical space-y-4 mt-auto">
-							{/* <Link to={`/products/${_id}`}> */}
+							<Link to={`/product-details/${_id}`}>
 							<button className="btn bg-gray-500 text-white mb-12">Details </button>
-							{/* </Link> */}
+							</Link>
 							<Link to={`/updateProduct/${_id}`}>
 								<button className="btn bg-gray-500 text-white">Update </button>
 							</Link>
