@@ -10,11 +10,10 @@ const Category = () => {
 			.then(res => res.json())
 			.then(data => {
 				setCategories(data)
-				console.log(data);
 			})
 	}, [])
 
-	console.log(categories);
+	// console.log(categories);
 	return (
 		<div className="grid grid-cols-3 gap-6 px-24 py-12">
 			{/* <h2>Category List : {categories.length}</h2> */}

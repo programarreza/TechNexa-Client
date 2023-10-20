@@ -4,11 +4,11 @@ import Advertisement from "../../components/Advertisement/Advertisement";
 
 const Brand = () => {
 	const products = useLoaderData()
-	console.log(products);
+	// console.log(products);
 	return (
 		<div>
 			<div>
-				<Advertisement></Advertisement>
+				{/* <Advertisement></Advertisement> */}
 			</div>
 			<div className="grid grid-cols-2 gap-8 px-24 py-12">
 				{
