@@ -4,7 +4,6 @@ import Advertisement from "../../components/Advertisement/Advertisement";
 
 const Brand = () => {
 	const products = useLoaderData()
-	// console.log(products);
 	return (
 		<div>
 			<div>
