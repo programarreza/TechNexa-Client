@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
-		<div>
+		<div data-aos = "fade-bottom">
 			<footer className="footer p-10 bg-base-200 text-white bg-[url('https://i.postimg.cc/cHz5ryh6/footer-bg-1.jpg')] bg-cover bg-center backdrop-brightness-50">
 				<nav>
 					<header className="footer-title lg:text-lg">Services</header>

@@ -1,15 +1,17 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-// import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
-// Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+
+
 
 const Banner = () => {
+	
+//data-aos = "fade-top"
 	return (
-		<div>
+		<div >
 			<>
 				<Swiper
 					spaceBetween={30}

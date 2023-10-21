@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const CategoryCard = ({ category }) => {
 	const { brand_name, photo } = category;
 	return (
-		<div>
+		<div data-aos = "fade-bottom">
 			<Link to={`/products/${brand_name}`}>
 				<div className="card card-compact bg-base-100 shadow-xl rounded-lg">
 					<figure><img src={photo} className='h-[300px]' alt="Shoes" /></figure>

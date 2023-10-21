@@ -1,10 +1,10 @@
-
+import PropTypes from 'prop-types'; 
 import { BsBoxArrowRight } from 'react-icons/bs';
 const NewsCard = ({ news }) => {
 	const { name, photo, description } = news;
 	return (
 		<div>
-			<div className="card card-compact bg-base-100 shadow-xl">
+			<div className="card card-compact bg-base-100 shadow-xl" data-aos = "fade-bottom">
 				<figure><img src={photo} alt="Shoes" /></figure>
 				<div className="card-body">
 					<h2 className="card-title">{name}</h2>
@@ -19,3 +19,7 @@ const NewsCard = ({ news }) => {
 };
 
 export default NewsCard;
+
+NewsCard.propTypes = {
+	news: PropTypes.object,
+}

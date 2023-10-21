@@ -1,6 +1,13 @@
 import Swal from "sweetalert2";
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const AddProduct = () => {
+
+	useEffect(()=> {
+		Aos.init({duration: 2000})
+	},[])
 
 	const handleAddProduct = (e) => {
 		e.preventDefault();
@@ -40,7 +47,7 @@ const AddProduct = () => {
 	}
 
 	return (
-		<div className="px-2 md:px-24 pb-12">
+		<div className="px-2 md:px-24 pb-12" data-aos = "fade-bottom">
 			<h2 className="text-center my-6 text-3xl font-bold">add product</h2>
 			<form onSubmit={handleAddProduct}>
 				<div className="grid lg:grid-cols-2 gap-6">
@@ -49,7 +56,7 @@ const AddProduct = () => {
 							<span className="label-text">Image</span>
 						</label>
 						<label className="">
-							<input type="text" name="image" placeholder="Image URL" className="input input-bordered focus-visible:border-hidden rounded-md w-full" />
+							<input type="text" name="image" placeholder="Image URL" className="input input-bordered focus-visible:border-hidden rounded-md w-full" required />
 						</label>
 					</div>
 					<div className="form-control">
@@ -57,7 +64,7 @@ const AddProduct = () => {
 							<span className="label-text">Name</span>
 						</label>
 						<label className="">
-							<input type="text" name="name" placeholder="Name" className="input input-bordered focus-visible:border-hidden rounded-md w-full" />
+							<input type="text" name="name" placeholder="Name" className="input input-bordered focus-visible:border-hidden rounded-md w-full" required />
 						</label>
 					</div>
 
@@ -66,7 +73,7 @@ const AddProduct = () => {
 						<label className="label">
 							<span className="label-text">Brand Name</span>
 						</label>
-						<select name="brand_name" className="select select-bordered">
+						<select name="brand_name" className="select select-bordered" required>
 							<option disabled selected>Select Brand Name</option>
 							<option>Apple</option>
 							<option>Samsung</option>
@@ -80,8 +87,8 @@ const AddProduct = () => {
 						<label className="label">
 							<span className="label-text">Type</span>
 						</label>
-						<select name="type" className="select select-bordered">
-							<option disabled selected>Type </option>
+						<select name="type" className="select select-bordered" required>
+							<option disabled selected required>Type </option>
 							<option>Phone</option>
 							<option>Computer</option>
 							<option>Headphone</option>
@@ -95,7 +102,7 @@ const AddProduct = () => {
 							<span className="label-text">Price</span>
 						</label>
 						<label className="">
-							<input type="text" name="price" placeholder="Price" className="input input-bordered focus-visible:border-hidden rounded-md w-full" />
+							<input type="text" name="price" placeholder="Price" className="input input-bordered focus-visible:border-hidden rounded-md w-full" required />
 						</label>
 					</div>
 
@@ -103,7 +110,7 @@ const AddProduct = () => {
 						<label className="label">
 							<span className="label-text">Rating</span>
 						</label>
-						<select name="rating" className="select select-bordered">
+						<select name="rating" className="select select-bordered" required>
 							<option disabled selected>Select Rating</option>
 							<option>1</option>
 							<option>2</option>
@@ -119,7 +126,7 @@ const AddProduct = () => {
 						<span className="label-text">Short description</span>
 					</label>
 					<label className="">
-						<input type="text" name="description" placeholder="Short description" className="input input-bordered focus-visible:border-hidden rounded-md w-full" />
+						<input type="text" name="description" placeholder="Short description" className="input input-bordered focus-visible:border-hidden rounded-md w-full" required />
 					</label>
 				</div>
 				<div className="text-center">

@@ -3,11 +3,11 @@ import { TbBrandOpenai } from 'react-icons/tb';
 import { BsSmartwatch } from 'react-icons/bs';
 import { MdOutlineMonitor } from 'react-icons/md';
 
-
+// data-aos = "fade-bottom"
 const Technology = () => {
 	return (
-		<div className="flex h-screen justify-center items-center flex-col">
-			<div
+		<div className="flex h-screen justify-center items-center flex-col" >
+			<div data-aos = "fade-top"
 				className="w-full h-screen bg-[url('https://i.postimg.cc/wx0x8Dyv/solve-bg-1.jpg')] bg-cover bg-center">
 				<div className="w-full h-full flex  justify-center items-center bg-[#0d0b18]/80 backdrop-brightness-50">
 					<div>

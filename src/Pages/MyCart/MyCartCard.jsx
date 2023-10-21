@@ -1,9 +1,14 @@
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import Swal from 'sweetalert2';
 
 const MyCartCard = ({ product, products, setProducts }) => {
 	const { _id, image, name, price, description } = product;
-	
+	useEffect(()=> {
+		Aos.init({duration: 2000})
+	},[])
 
 	const handleDeleteProduct = (id) => {
 		console.log(id);
@@ -19,7 +24,7 @@ const MyCartCard = ({ product, products, setProducts }) => {
 			.then((result) => {
 				if (result.isConfirmed) {
 
-					fetch(`http://localhost:5000/cart/${id}`, {
+					fetch(`http://tech-nexa-server-391m8l6ks-md-shafikul-islams-projects.vercel.app/cart/${id}`, {
 						method: 'DELETE'
 					})
 						.then(res => res.json())
@@ -43,7 +48,7 @@ const MyCartCard = ({ product, products, setProducts }) => {
 	}
 	return (
 		<div>
-			<div className="card card-compact bg-base-100  shadow-xl">
+			<div className="card card-compact bg-base-100  shadow-xl" data-aos="fade-top">
 				<figure><img className="w-full h-[250px]" src={image} alt="Shoes" /></figure>
 				<div className="p-4">
 					<h2 className="card-title">{name}</h2>
@@ -58,7 +63,7 @@ const MyCartCard = ({ product, products, setProducts }) => {
 					</div>
 					
 					<div className="card-actions justify-center">
-						<button onClick={() => handleDeleteProduct(_id)} className="btn btn-primary w-full mt-4">Delete</button>
+						<button onClick={() => handleDeleteProduct(_id)} className="btn bg-gray-500 text-white w-full mt-4 hover:bg-gray-700">Delete</button>
 					</div>
 				</div>
 			</div>

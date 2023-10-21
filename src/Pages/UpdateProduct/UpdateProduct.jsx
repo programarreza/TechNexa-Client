@@ -1,11 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const UpdateProduct = () => {
 
 	const loadedProduct = useLoaderData()
 	console.log(loadedProduct);
 	const { _id, image, name, brand_name, type, price, rating, description } = loadedProduct;
+
+	useEffect(()=> {
+		Aos.init({duration: 1000})
+	},[])
 
 	const handleUpdateProduct = (e) => {
 		e.preventDefault();
@@ -22,6 +29,7 @@ const UpdateProduct = () => {
 		console.log(image, name, brand_name, type, price, description, rating);
 		const updatedProduct = { image, name, brand_name, type, price, rating, description }
 
+		
 		fetch(`https://tech-nexa-server-391m8l6ks-md-shafikul-islams-projects.vercel.app/product-update/${_id}`, {
 			method: 'PUT',
 			headers: {
@@ -40,11 +48,9 @@ const UpdateProduct = () => {
 				}
 				console.log(data);
 			})
-
-
 	}
 	return (
-		<div className="px-24 pb-12">
+		<div className="px-24 pb-12" data-aos="zoom-in-down">
 			<h2 className="text-center my-6 text-3xl font-bold">Update Product</h2>
 			<form onSubmit={handleUpdateProduct}>
 				<div className="grid grid-cols-2 gap-6">
@@ -123,7 +129,7 @@ const UpdateProduct = () => {
 						<span className="label-text">Short description</span>
 					</label>
 					<label className="">
-						<input type="text" name="description" defaultValue={description} placeholder="Short description" className="input input-bordered focus-visible:border-hidden rounded-md w-full" />
+						<input type="text" name="description" defaultValue={description} placeholder="Short description" className="input input-bordered focus-visible:border-hidden rounded-md w-full py-10" />
 					</label>
 				</div>
 				<div className="text-center">

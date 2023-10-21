@@ -13,7 +13,7 @@ const MyCart = () => {
 			})
 	}, [])
 	return (
-		<div className="grid grid-cols-3 gap-5 px-24 my-8 w-full min-h-screen">
+		<div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5 p-2 lg:px-24 my-8 w-full min-h-screen">
 			{
 				products.map(product => <MyCartCard key={product._id} product={product} products={products} setProducts={setProducts}></MyCartCard>)
 			}

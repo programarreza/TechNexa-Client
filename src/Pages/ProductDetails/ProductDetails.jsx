@@ -1,12 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const ProductDetails = () => {
 	const detailsProduct = useLoaderData()
 	const { image, name, price, description } = detailsProduct;
 	console.log(detailsProduct);
 	const cartProduct = { image, name, price, description };
+
+	useEffect(()=> {
+		Aos.init({duration: 2000})
+	},[])
 
 
 	const handleAddCart = (cartProduct) => {
@@ -32,10 +38,10 @@ const ProductDetails = () => {
 
 	}
 	return (
-		<div className="px-12 lg:px-24 mx-auto flex justify-center">
+		<div className="px-12 lg:px-24 mx-auto flex justify-center" data-aos = "fade-bottom">
 			<div className="card lg:w-[60%] lg:h-[100vh] glass">
 				<figure><img className="w-full h-full" src={image} alt="car!" /></figure>
-				<div className=" flex justify-between p-4">
+				<div className=" md:flex justify-between p-4">
 					<div>
 						<h2 className="card-title">Model: {name}</h2>
 						<p>Price: {price}$</p>
