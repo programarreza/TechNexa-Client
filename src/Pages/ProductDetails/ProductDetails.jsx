@@ -6,9 +6,9 @@ import { useEffect } from "react";
 
 const ProductDetails = () => {
 	const detailsProduct = useLoaderData()
-	const { image, name, price, description } = detailsProduct;
+	const { image, name, price, description, rating } = detailsProduct;
 	console.log(detailsProduct);
-	const cartProduct = { image, name, price, description };
+	const cartProduct = { image, name, price, description, rating };
 
 	useEffect(()=> {
 		Aos.init({duration: 2000})

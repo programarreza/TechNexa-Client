@@ -1,3 +1,4 @@
+import { Rating } from '@mui/material';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
@@ -5,10 +6,11 @@ import { useEffect } from 'react';
 import Swal from 'sweetalert2';
 
 const MyCartCard = ({ product, products, setProducts }) => {
-	const { _id, image, name, price, description } = product;
-	useEffect(()=> {
-		Aos.init({duration: 2000})
-	},[])
+	const { _id, image, name, price, description, rating } = product;
+	console.log(rating);
+	useEffect(() => {
+		Aos.init({ duration: 2000 })
+	}, [])
 
 	const handleDeleteProduct = (id) => {
 		console.log(id);
@@ -24,7 +26,7 @@ const MyCartCard = ({ product, products, setProducts }) => {
 			.then((result) => {
 				if (result.isConfirmed) {
 
-					fetch(`http://tech-nexa-server-391m8l6ks-md-shafikul-islams-projects.vercel.app/cart/${id}`, {
+					fetch(`https://tech-nexa-server-lvmsbzkde-md-shafikul-islams-projects.vercel.app/cart/${id}`, {
 						method: 'DELETE'
 					})
 						.then(res => res.json())
@@ -33,7 +35,7 @@ const MyCartCard = ({ product, products, setProducts }) => {
 							if (data.deletedCount > 0) {
 								console.log('deleted successfully');
 								Swal.fire(
-									'Deleted!',
+									'Deleted Successfully!',
 									'Your Product has been deleted.',
 									'success'
 								)
@@ -44,24 +46,29 @@ const MyCartCard = ({ product, products, setProducts }) => {
 						})
 				}
 			})
-		
+
 	}
 	return (
 		<div>
 			<div className="card card-compact bg-base-100  shadow-xl" data-aos="fade-top">
 				<figure><img className="w-full h-[250px]" src={image} alt="Shoes" /></figure>
-				<div className="p-4">
-					<h2 className="card-title">{name}</h2>
-					<div className="flex justify-between">
-						<p className="text-lg font-semibold">Price: {price}$</p>
-						<p className="text-lg font-semibold">Price: {price}$</p>
+				<div className="p-4 flex flex-col jb">
+					<div className='h-[170px]'>
+						<h2 className="card-title">{name}</h2>
+						<div className="flex justify-between">
+							<p className="text-lg font-semibold">Price: {price}$</p>
+							<div className="flex items-center ">
+								<p className="text-lg font-semibold">Rating : </p>
+								<Rating name="read-only" value={rating} readOnly />
+							</div>
+						</div>
+						<div className='mt-3'>
+							{
+								description.length > 100 ? <p>{description.slice(0, 100)} </p> : <p>{description}</p>
+							}
+						</div>
 					</div>
-					<div className='mt-3'>
-						{
-							description.length > 100 ? <p>{description.slice(0, 100)} </p> : <p>{description}</p>
-						}
-					</div>
-					
+
 					<div className="card-actions justify-center">
 						<button onClick={() => handleDeleteProduct(_id)} className="btn bg-gray-500 text-white w-full mt-4 hover:bg-gray-700">Delete</button>
 					</div>
