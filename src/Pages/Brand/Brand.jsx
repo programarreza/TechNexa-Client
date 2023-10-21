@@ -4,6 +4,11 @@ import Advertisement from "../../components/Advertisement/Advertisement";
 
 const Brand = () => {
 	const products = useLoaderData()
+	if(products.length == 0){
+		return <div className="w-full min-h-screen flex items-center justify-center text-center">
+			<h1 className="text-4xl">Products Not Available </h1>
+		</div>
+	}
 	return (
 		<div>
 			<div>

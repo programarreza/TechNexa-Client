@@ -30,7 +30,6 @@ const BrandCard = ({ product }) => {
 								<p className="text-xl font-bold">Rating : </p>
 								<Rating name="read-only" value={rating} readOnly />
 							</div>
-
 						</div>
 
 						<div className="flex mt-4 justify-between btn-group btn-group-col mr-auto block lg:btn-group-vertical lg:space-y-4 lg:mt-auto ">

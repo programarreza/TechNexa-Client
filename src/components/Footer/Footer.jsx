@@ -48,7 +48,7 @@ const Footer = () => {
 					<fieldset className="form-control w-80 mt-6">
 						<div className="relative">
 							<input type="text" placeholder="Get News & Update" className="input  w-full pr-16 text-white bg-transparent border border-white" />
-							<button className="btn bg-slate-400 absolute top-0 right-0 rounded-l-none">Subscribe</button>
+							<button className="btn bg-slate-400 absolute top-0 right-0 rounded-l-none text-black hover:text-white hover:bg-slate-600 ">Subscribe</button>
 							<p className='mt-3 text-lg'>technology services play a crucial role in supporting
 								and advancing modern businesses and .</p>
 						</div>

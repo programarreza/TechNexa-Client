@@ -10,9 +10,9 @@ const ProductDetails = () => {
 	console.log(detailsProduct);
 	const cartProduct = { image, name, price, description, rating };
 
-	useEffect(()=> {
-		Aos.init({duration: 2000})
-	},[])
+	useEffect(() => {
+		Aos.init({ duration: 2000 })
+	}, [])
 
 
 	const handleAddCart = (cartProduct) => {
@@ -38,7 +38,7 @@ const ProductDetails = () => {
 
 	}
 	return (
-		<div className="px-12 lg:px-24 mx-auto flex justify-center" data-aos = "fade-bottom">
+		<div className="px-5 md:px-12 lg:px-24 mx-auto flex justify-center" data-aos="fade-bottom">
 			<div className="card lg:w-[60%] lg:h-[100vh] glass">
 				<figure><img className="w-full h-full" src={image} alt="car!" /></figure>
 				<div className=" md:flex justify-between p-4">
@@ -50,7 +50,12 @@ const ProductDetails = () => {
 						<button onClick={() => handleAddCart(cartProduct)} className="btn bg-gray-500 text-white">Add To Card</button>
 					</div>
 				</div>
-				<h2 className="p-5">{description}</h2>
+				<div className='mt-3 p-4'>
+					{
+						description.length > 450 ? <p>{description.slice(0, 450)} </p> : <p>{description}</p>
+					}
+				</div>
+				{/* <h2 className="p-5">{description}</h2> */}
 			</div>
 		</div>
 	);
