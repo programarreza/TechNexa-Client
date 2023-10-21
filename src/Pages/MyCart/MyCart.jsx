@@ -5,7 +5,7 @@ const MyCart = () => {
 	const [products, setProducts] = useState([])
 
 	useEffect(() => {
-		fetch('http://localhost:5000/cart')
+		fetch('https://tech-nexa-server-q4jaehquk-md-shafikul-islams-projects.vercel.app/cart')
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);
@@ -13,9 +13,9 @@ const MyCart = () => {
 			})
 	}, [])
 	return (
-		<div className="grid grid-cols-3 gap-5 px-24 my-8">
+		<div className="grid grid-cols-3 gap-5 px-24 my-8 w-full min-h-screen">
 			{
-				products.map(product => <MyCartCard key={product._id} product={product}></MyCartCard>)
+				products.map(product => <MyCartCard key={product._id} product={product} products={products} setProducts={setProducts}></MyCartCard>)
 			}
 		</div>
 	);

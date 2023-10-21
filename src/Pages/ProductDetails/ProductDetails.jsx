@@ -6,15 +6,16 @@ const ProductDetails = () => {
 	const detailsProduct = useLoaderData()
 	const { image, name, price, description } = detailsProduct;
 	console.log(detailsProduct);
+	const cartProduct = { image, name, price, description };
 
 
-	const handleAddCart = (detailsProduct) => {
-		fetch('http://localhost:5000/cart', {
+	const handleAddCart = (cartProduct) => {
+		fetch('https://tech-nexa-server-q4jaehquk-md-shafikul-islams-projects.vercel.app/cart', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify(detailsProduct)
+			body: JSON.stringify(cartProduct)
 
 		})
 			.then(res => res.json())
@@ -40,7 +41,7 @@ const ProductDetails = () => {
 						<p>Price: {price}$</p>
 					</div>
 					<div className="card-actions justify-center">
-						<button onClick={() => handleAddCart(detailsProduct)} className="btn bg-gray-500 text-white">Add To Card</button>
+						<button onClick={() => handleAddCart(cartProduct)} className="btn bg-gray-500 text-white">Add To Card</button>
 					</div>
 				</div>
 				<h2 className="p-5">{description}</h2>

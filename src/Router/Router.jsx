@@ -6,11 +6,11 @@ import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyCart from "../Pages/MyCart/MyCart";
-import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import Register from "../Pages/Register/Register";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
-import News from "../components/News/News";
 import PrivateRoute from "./PrivateRoute";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
+import News from "../components/News/News";
 
 const router = createBrowserRouter([
 	{
